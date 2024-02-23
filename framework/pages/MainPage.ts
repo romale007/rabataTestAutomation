@@ -1,6 +1,6 @@
 import { Locator, Page, expect } from '@playwright/test';
 import { BasePage } from './BasePage';
-import { Modal } from '../widgets';
+import { Modal, PricingCalculator } from '../widgets';
 import { privacyPolicy, termsAndConditions } from '../constants';
 
 export class MainPage extends BasePage {
@@ -13,6 +13,8 @@ export class MainPage extends BasePage {
   // Modals
   termsModal: Modal;
   privacyPolicyModal: Modal;
+
+  calculator: PricingCalculator;
 
   constructor(currentPage: Page) {
     super(currentPage);
@@ -29,6 +31,8 @@ export class MainPage extends BasePage {
       .locator('.firstscreen')
       .getByRole('link')
       .filter({ hasText: 'Try it for free' });
+
+    this.calculator = new PricingCalculator(this.currentPage);
 
     this.privacyPolicyLink = this.currentPage
       .locator('a')

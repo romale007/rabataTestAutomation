@@ -57,6 +57,4 @@ test.describe('Rabata base features check', () => {
       await registrationPage.privacyPolicyModal.test();
     });
   });
-
-  test('Calculator test', async ({ page }) => {});
 });
