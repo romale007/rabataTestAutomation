@@ -44,23 +44,22 @@ npm run test
 ## Use Allure-report
 Please insure, that Allure environment have been installed already. Please refer Allure installation [documentation](https://allurereport.org/docs/gettingstarted-installation/)
 
--- Run tests with allure artifacts generation:
+- Run tests with allure artifacts generation:
 ```
 npm run test:allure
 ```
 
--- Set results path into env. variable ALLURE_RESULTS_DIR:  
-Mac or Linux
-```
-export ALLURE_RESULTS_DIR=my-allure-results  
-```
-  Windows
-```
-set ALLURE_RESULTS_DIR=my-allure-results 
-```
+- Set results path into env. variable ALLURE_RESULTS_DIR:  
 
--- Run commands:
+```
+# Mac or Linux
+export ALLURE_RESULTS_DIR=my-allure-results  
+# Windows
+set ALLURE_RESULTS_DIR=my-allure-results 
+```  
+
+- Run commands:
 ```
 allure generate my-allure-results -o allure-report --clean
-allure open allure-report
+allure open allure-report  
 ```

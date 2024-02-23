@@ -1,13 +1,19 @@
-import { test, expect } from '@playwright/test';
+import { test as base, expect } from '@playwright/test';
 import { MainPage, RegistrationPage } from '../framework/pages';
+
+const test = base.extend<{ mainPage: MainPage }>({
+  mainPage: async ({ page }, use) => {
+    const mainPage = new MainPage(page);
+    await use(mainPage);
+  },
+});
 
 test.describe('Rabata base features check', () => {
   test.beforeEach(async ({ page }) => {
     await page.goto('/');
   });
 
-  test.skip('Registration check', async ({ page, context }) => {
-    const mainPage = new MainPage(page);
+  test('Registration check', async ({ page, mainPage }) => {
     const registrationPage = new RegistrationPage(page);
     await test.step('You are on main page, click on "Sign Up"', async () => {
       await mainPage.signUpBtn.click();
@@ -26,24 +32,22 @@ test.describe('Rabata base features check', () => {
     });
 
     await test.step('Initialize verification', async () => {
-      expect(page).toHaveURL('verify/info/*');
+      await registrationPage.signUpBtn.click();
       await expect(page.locator('h1')).toHaveText('Verify your email');
       await expect(
         page.getByRole('link').filter({ hasText: email })
       ).toBeVisible();
+      await expect(page).toHaveURL(/verify\/info/);
     });
   });
 
-  test('"Try it for free" check', async ({ page }) => {
-    const mainPage = new MainPage(page);
+  test('"Try it for free" check', async ({ page, mainPage }) => {
     const registrationPage = new RegistrationPage(page);
     await mainPage.tryForFreeBtn.click();
     await registrationPage.testDefaultState();
   });
 
-  test('Privacy policy check', async ({ page }) => {
-    const mainPage = new MainPage(page);
-
+  test('Privacy policy check', async ({ page, mainPage }) => {
     await test.step('Test on main page', async () => {
       await mainPage.openPrivacyPolicy();
       await mainPage.privacyPolicyModal.test();
