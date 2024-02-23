@@ -9,7 +9,7 @@ export const setSliderValue = async (
   page: Page,
   slider: Locator,
   target: number
-) => {
+): Promise<void> => {
   const sliderDims = await slider.evaluate((el) => {
     return {
       maxWidth: el.getBoundingClientRect().width,

@@ -22,7 +22,7 @@ export class Slider {
     return value;
   }
 
-  async set(value: string | number) {
+  async set(value: string | number): Promise<void> {
     await setSliderValue(this.currentPage, this.locator, Number(value));
   }
 }

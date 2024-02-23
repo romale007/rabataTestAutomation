@@ -13,7 +13,6 @@ const test = base.extend<{ mainPage: MainPage }>({
 test.describe('Calculator test', () => {
   for (let preset of testRatesParams) {
     test(preset.name, async ({ mainPage }) => {
-      // const mainPage = new MainPage(page);
       await mainPage.calculator.testCalculatedParams(preset.use);
     });
   }

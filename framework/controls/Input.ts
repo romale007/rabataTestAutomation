@@ -20,7 +20,7 @@ export class Input {
     return inputValue;
   }
 
-  async set(value: string | number, typeSequently = false) {
+  async set(value: string | number, typeSequently = false): Promise<void> {
     await this.clear();
     if (typeSequently) {
       await this.locator.pressSequentially(String(value), { delay: 100 });
