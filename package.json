@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "npx playwright test",
-    "test:debug": "npx playwright test --debug"
+    "test:debug": "npx playwright test --debug",
+    "test:allure": "ALLURE_RESULTS_DIR=my-allure-results npx playwright test --reporter=list,allure-playwright"
   },
   "keywords": [],
   "author": "",
