@@ -28,4 +28,6 @@ export class Input {
       await this.locator.fill(String(value));
     }
   }
+
+  async validate() {} // can be added later
 }
