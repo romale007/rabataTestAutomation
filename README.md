@@ -7,7 +7,7 @@ Autotests and framework for rabata.io
 - [Framework features](#framework-features)
 - [Installation](#installation)
 - [Starting tests](#starting-tests)
-- [Use Allure-report](#use-allure-report)
+- [Using allure-report](#using-allure-report)
 
 
 ## Framework features
@@ -41,8 +41,8 @@ Headless mode:
 npm run test
 ```
 
-## Use Allure-report
-Please insure, that Allure environment have been installed already. Please refer Allure installation [documentation](https://allurereport.org/docs/gettingstarted-installation/)
+## Using allure-report
+Please insure, that allure environment have been installed already. Please refer allure installation [documentation](https://allurereport.org/docs/gettingstarted-installation/)
 
 - Run tests with allure artifacts generation:
 ```
