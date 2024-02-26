@@ -5,19 +5,19 @@ import { Modal } from '../widgets';
 import { privacyPolicy, termsAndConditions } from '../constants';
 
 export class RegistrationPage extends BasePage {
-  loginBtn: Locator;
-  homeBtn: Locator;
-  nameInput: Input;
-  emailInput: Input;
-  passwordInput: Input;
-  repeatPassInput: Input;
-  signUpBtn: Locator;
-  agreementCheckbox: Locator;
-  privacyPolicyLink: Locator;
+  readonly loginBtn: Locator;
+  readonly homeBtn: Locator;
+  readonly nameInput: Input;
+  readonly emailInput: Input;
+  readonly passwordInput: Input;
+  readonly repeatPassInput: Input;
+  readonly signUpBtn: Locator;
+  readonly agreementCheckbox: Locator;
+  readonly privacyPolicyLink: Locator;
 
   // Modals
-  termsModal: Modal;
-  privacyPolicyModal: Modal;
+  readonly termsModal: Modal;
+  readonly privacyPolicyModal: Modal;
 
   constructor(currentPage: Page) {
     super(currentPage);

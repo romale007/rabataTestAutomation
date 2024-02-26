@@ -6,8 +6,8 @@ import { Locator, Page } from '@playwright/test';
  * @param {string} locatorStr - locator
  */
 export class Input {
-  locator: Locator;
-  constructor(currentPage: Page, locatorStr: string) {
+  readonly locator: Locator; // to be improved
+  constructor(readonly currentPage: Page, readonly locatorStr: string) {
     this.locator = currentPage.getByTestId(locatorStr);
   }
 

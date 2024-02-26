@@ -7,10 +7,13 @@ import { setSliderValue } from '../helpers/sliderHelper';
  * @param {string} locatorStr - locator
  */
 export class Slider {
-  currentPage: Page;
-  locator: Locator;
+  readonly locator: Locator;
 
-  constructor(currentPage: Page, id: string, wrapper?: Locator) {
+  constructor(
+    private readonly currentPage: Page,
+    readonly id: string,
+    readonly wrapper?: Locator
+  ) {
     this.currentPage = currentPage;
     this.locator = wrapper
       ? wrapper.getByTestId(id)

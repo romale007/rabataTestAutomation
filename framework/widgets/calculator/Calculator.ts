@@ -6,14 +6,14 @@ import { BackupRates, BaseRates, TestRatesParameters } from './types';
  * @param {Page} currentPage - page context
  */
 export class PricingCalculator {
-  locator: Locator;
-  dataApiStoredSlider: Slider;
-  dataDownloadSlider: Slider;
-  dataStoredSlider: Slider;
-  baseTariffBtn: Locator;
-  backupTariffBtn: Locator;
+  private readonly locator: Locator;
+  readonly dataApiStoredSlider: Slider;
+  readonly dataDownloadSlider: Slider;
+  readonly dataStoredSlider: Slider;
+  readonly baseTariffBtn: Locator;
+  readonly backupTariffBtn: Locator;
 
-  constructor(currentPage: Page) {
+  constructor(readonly currentPage: Page) {
     this.locator = currentPage.getByTestId('pricing');
 
     this.baseTariffBtn = this.locator

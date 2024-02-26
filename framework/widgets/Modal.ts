@@ -3,10 +3,10 @@ import { Locator, Page, expect } from '@playwright/test';
 type ModalOptions = { title: string; content: string; id?: string };
 
 export class Modal {
-  locator: Locator;
-  closeBtn: Locator;
-  confirmBtn: Locator;
-  options: ModalOptions;
+  readonly locator: Locator;
+  readonly closeBtn: Locator;
+  readonly confirmBtn: Locator;
+  private readonly options: ModalOptions;
 
   constructor(currentPage: Page, options: ModalOptions) {
     this.locator = options.id

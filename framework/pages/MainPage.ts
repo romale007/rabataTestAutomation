@@ -4,17 +4,17 @@ import { Modal, PricingCalculator } from '../widgets';
 import { privacyPolicy, termsAndConditions } from '../constants';
 
 export class MainPage extends BasePage {
-  loginBtn: Locator;
-  signUpBtn: Locator;
-  tryForFreeBtn: Locator;
-  privacyPolicyLink: Locator;
-  termsLink: Locator;
+  readonly loginBtn: Locator;
+  readonly signUpBtn: Locator;
+  readonly tryForFreeBtn: Locator;
+  readonly privacyPolicyLink: Locator;
+  readonly termsLink: Locator;
 
   // Modals
-  termsModal: Modal;
-  privacyPolicyModal: Modal;
+  readonly termsModal: Modal;
+  readonly privacyPolicyModal: Modal;
 
-  calculator: PricingCalculator;
+  readonly calculator: PricingCalculator;
 
   constructor(currentPage: Page) {
     super(currentPage);
